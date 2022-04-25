@@ -1,5 +1,20 @@
+
 //Variables
 $margenSuperior: 30px;
+@mixin grid{
+    display: grid;
+    margin-top: $margenSuperior;
+    grid-template-columns: 500px 500px;
+    column-gap: 30px;
+    grid-template-rows: 375px 375px 375px;
+    row-gap: 25px; 
+}
+%flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
 
 //reset
 *{
@@ -107,12 +122,7 @@ footer{
 // Las cabañas
 
 .cabañas{
-    display: grid;
-    margin-top: $margenSuperior;
-    grid-template-columns: 500px 500px;
-    column-gap: 30px;
-    grid-template-rows: 375px 375px 375px;
-    row-gap: 25px;
+    @include grid;
 
     grid-template-areas: "imagen1 texto1"
     "texto2 imagen2"
@@ -150,9 +160,7 @@ grid-area: texto3;
 
 .galeria{
     margin-top: $margenSuperior;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;       
+    @extend %flex      
 }
 
 .mainGaleria{
@@ -215,7 +223,7 @@ grid-area: texto3;
     grid-area: insta;      
 }
 
-// media queries mobile
+/*mobile*/
 
 @media only screen and (max-width:600px){
 
@@ -344,8 +352,7 @@ grid-area: texto3;
     }
 }
 
-
-// media queries tablet 
+/*Tablet*/
 
 @media only screen and (max-width:900px) and (min-width:600px ){
 

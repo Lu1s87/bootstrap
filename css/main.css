@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -93,10 +98,7 @@ footer {
   grid-area: texto3; }
 
 .galeria {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
+  margin-top: 30px; }
 
 .mainGaleria .galeria img {
   margin: 20px; }
@@ -137,6 +139,7 @@ footer {
 .insta {
   grid-area: insta; }
 
+/*mobile*/
 @media only screen and (max-width: 600px) {
   .video {
     display: none; }
@@ -194,6 +197,7 @@ footer {
   .insta {
     grid-area: insta; } }
 
+/*Tablet*/
 @media only screen and (max-width: 900px) and (min-width: 600px) {
   .video {
     display: none; }
