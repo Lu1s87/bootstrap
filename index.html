@@ -20,29 +20,25 @@
  
     <!-- menu de navegacion -->
     
-    <header class="barraMenu">
+    <header>
 
-        <a href="index.html"><img src="img/Logo-Complejo-Firenze.png" alt="logo"></a>
-        
-        <nav class="menu">
-            <ul>
-                <li><a href="index.html"> Inicio </a>
-                </li>
-                
-                <li><a href="pages/lascabanas.html"> Las Cabañas </a>
-                </li>    
-                
-                <li><a href="pages/galeria.html"> Galeria </a>
-                </li>
-    
-                <li><a href="pages/reservas.html"> Reservas </a>
-                </li>    
-                
-                <li><a href="pages/contacto.html"> Contacto </a>
-                </li> 
-                
-            </ul>
+        <nav class="nav">
+            <div class="navContainer">
+                <a href="index.html"><img src="img/Logo-Complejo-Firenze.png" alt="logo" class="logo"></a>
+                <label for="menu" class="navLabel">
+                    <img src="img/menu.png" alt="img" class="navImg">
+                </label>
+                <input type="checkbox" id="menu" class="navInput">
+                <div class="navMenu">
+                    <a href="index.html" class="navItem">Inicio</a>
+                    <a href="pages/lascabanas.html" class="navItem">Las Cabañas</a>
+                    <a href="pages/galeria.html" class="navItem">Galeria</a>
+                    <a href="pages/reservas.html" class="navItem">Reservas</a>
+                    <a href="pages/contacto.html" class="navItem">Contacto</a>
+                </div>    
+            </div>
         </nav>
+
     </header>
 
     <!-- introduccion -->

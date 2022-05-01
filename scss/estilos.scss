@@ -1,6 +1,6 @@
 
 //Variables
-$margenSuperior: 30px;
+$margenSuperior: 130px;
 @mixin grid{
     display: grid;
     margin-top: $margenSuperior;
@@ -14,6 +14,7 @@ $margenSuperior: 30px;
     flex-wrap: wrap;
     justify-content: center; 
 }
+@import "layout/menu";
 
 
 //reset
@@ -26,59 +27,18 @@ $margenSuperior: 30px;
 //Estilos generales
 
 body{
-    background-image: linear-gradient(to right, rgb(245, 236, 194), white);
+    background-image: linear-gradient(to right, rgb(231, 224, 190), rgb(247, 238, 202));
 }
 
-.barraMenu{
-    background-color: white;
-    position: sticky;
-    top:0;  
-    display: flex;
-    justify-content: space-between; 
+p{
+    color: #c6243c;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
-
-.menu{
-    display: flex;
-    padding-top: 65px;
-    padding-right: 20px;
-}
-
-header{
-    nav{
-        ul{
-            li{
-                padding-left: 7px;
-                padding-right: 7px;
-                display: inline-block;
-            }
-        } 
-    } 
-} 
-    
-
-
-header{
-    nav{
-        ul{
-            li{
-                a{
-                    text-decoration: none;
-                    color: black;
-                    font-family: 'Inter', sans-serif;
-                
-                    font-family: 'Roboto', sans-serif;
-                
-                    font-family: 'Rubik', sans-serif; 
-                }
-            }
-        }
-    }
-} 
-
-
 
 footer{
-    margin-top: $margenSuperior;
+    margin-top: 50px;
     margin-bottom: 15px;
     text-align: center;
     font-size: 15px;   
@@ -106,7 +66,7 @@ footer{
 
 .intro{
     grid-area: imagen;
-    margin-top: $margenSuperior;  
+    margin-top: 30px;  
 }
 
 .intro2{
@@ -177,6 +137,11 @@ grid-area: texto3;
     margin-top: $margenSuperior;
 }
 
+.fondoReserva{
+    margin-top: $margenSuperior;
+    text-align: center;
+}
+
 //contacto
 
 .mainContacto{
@@ -186,7 +151,7 @@ grid-area: texto3;
     justify-content: center;
     justify-items: center;
     
-    margin-top: 50px;
+    margin-top: $margenSuperior;
     column-gap: 10px;
     row-gap: 50px;
 
@@ -202,12 +167,23 @@ grid-area: texto3;
     grid-area: mapa;
 }
 
-.contacto{
+.contacto {
     grid-area: form;
     font-size: 20px;
-    width: 600px;    
-}
-
+    width: 600px; }
+  
+.contacto{
+    input{
+        width: 500px;
+    }
+} 
+  
+.contacto{
+    .mensaje{
+        width: 500px;
+        height: 200px;
+    }
+} 
 
 .tel{
     grid-area: tel;   
@@ -226,6 +202,34 @@ grid-area: texto3;
 /*mobile*/
 
 @media only screen and (max-width:600px){
+
+    // menu
+    .logo{
+        height: 70px;
+    }
+    .navLabel{
+        display: block;
+        cursor: pointer;
+    }
+    
+    .navMenu{
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        background: #f5ecc2;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+    }
+    
+    .navInput:checked + .navMenu{
+        clip-path: circle(100% at center);
+    }  
 
     // index
 
@@ -271,27 +275,6 @@ grid-area: texto3;
         width: 400px;
     }
 
-    // reserva
-
-    .formulario{
-        background-color: whitesmoke;
-        font-size: 18px;
-        display: flex;
-        height: 200px;
-        width: 300px;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;    
-    }
-    
-    .mainFormulario{
-        .formulario{
-            div{
-                font-size: 18px;
-            }
-        }
-    }
-
     // contacto
 
     .mainContacto{
@@ -315,14 +298,12 @@ grid-area: texto3;
    
     .mapaC{
         display: none;
-
     }
     
     .contacto{
         grid-area: form;
         font-size: 20px;
-        width: 300px;
-        
+        width: 300px;      
     }
     
     .mainContacto{
@@ -330,6 +311,19 @@ grid-area: texto3;
             img{
                 width: 60%;
             }
+        }
+    }
+
+    .contacto{
+        input{
+            width: 300px;
+        }
+    }
+    
+    .contacto{
+        .mensaje{
+            width: 300px;
+            height: 150px;
         }
     }
 
@@ -355,6 +349,36 @@ grid-area: texto3;
 /*Tablet*/
 
 @media only screen and (max-width:900px) and (min-width:600px ){
+
+    // Menu
+    .logo{
+        height: 70px;
+    }
+      
+    .navLabel{
+        display: block;
+        cursor: pointer;
+    }
+    
+    .navMenu{
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        background: #f5ecc2;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+    }
+    
+    .navInput:checked + .navMenu{
+        clip-path: circle(100% at center);
+    }
+    
 
     // index 
     
@@ -393,6 +417,7 @@ grid-area: texto3;
      
         }    
     }
+
     // contacto
 
     .mainContacto{
@@ -418,10 +443,21 @@ grid-area: texto3;
     .contacto{
         grid-area: form;
         font-size: 20px;
-        width: 600px;
-        
+        width: 600px;    
+    }
+
+    .contacto{
+        input{
+            width: 600px;
+        }
     }
     
+    .contacto{
+        .mensaje{
+            width: 600px;
+            height: 150px;
+        }
+    }
 
     .tel{
         grid-area: tel;

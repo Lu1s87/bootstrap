@@ -4,40 +4,69 @@
   flex-wrap: wrap;
   justify-content: center; }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0; }
+
+.nav {
+  background: white;
+  height: 100px;
+  color: #c6243c; }
+
+.navContainer {
+  display: flex;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center; }
+
+.navMenu {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 3em; }
+
+.navItem {
+  color: #c6243c;
+  text-decoration: none;
+  --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Rubik', sans-serif; }
+
+.navItem::after {
+  content: "";
+  display: block;
+  background: #c6243c;
+  width: 90%;
+  margin-top: 3px;
+  height: 3px;
+  clip-path: var(--clippy);
+  transition: clip-path .4s; }
+
+.navItem:hover {
+  --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+
+.navLabel, .navInput {
+  display: none; }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
 
 body {
-  background-image: linear-gradient(to right, #f5ecc2, white); }
+  background-image: linear-gradient(to right, #e7e0be, #f7eeca); }
 
-.barraMenu {
-  background-color: white;
-  position: sticky;
-  top: 0;
-  display: flex;
-  justify-content: space-between; }
-
-.menu {
-  display: flex;
-  padding-top: 65px;
-  padding-right: 20px; }
-
-header nav ul li {
-  padding-left: 7px;
-  padding-right: 7px;
-  display: inline-block; }
-
-header nav ul li a {
-  text-decoration: none;
-  color: black;
+p {
+  color: #c6243c;
   font-family: 'Inter', sans-serif;
   font-family: 'Roboto', sans-serif;
   font-family: 'Rubik', sans-serif; }
 
 footer {
-  margin-top: 30px;
+  margin-top: 50px;
   margin-bottom: 15px;
   text-align: center;
   font-size: 15px; }
@@ -50,7 +79,7 @@ footer {
 .video {
   grid-area: video;
   text-align: center;
-  margin-top: 30px; }
+  margin-top: 130px; }
 
 .video2 {
   display: none; }
@@ -65,11 +94,11 @@ footer {
 .mapa {
   grid-area: mapa;
   margin-top: 50px;
-  margin-bottom: 30px; }
+  margin-bottom: 130px; }
 
 .cabañas {
   display: grid;
-  margin-top: 30px;
+  margin-top: 130px;
   grid-template-columns: 500px 500px;
   column-gap: 30px;
   grid-template-rows: 375px 375px 375px;
@@ -98,20 +127,24 @@ footer {
   grid-area: texto3; }
 
 .galeria {
-  margin-top: 30px; }
+  margin-top: 130px; }
 
 .mainGaleria .galeria img {
   margin: 20px; }
 
 .formulario {
-  margin-top: 30px; }
+  margin-top: 130px; }
+
+.fondoReserva {
+  margin-top: 130px;
+  text-align: center; }
 
 .mainContacto {
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
   justify-content: center;
   justify-items: center;
-  margin-top: 50px;
+  margin-top: 130px;
   column-gap: 10px;
   row-gap: 50px;
   grid-template-areas: "mapa mapa form form" "tel mail face insta"; }
@@ -127,6 +160,13 @@ footer {
   font-size: 20px;
   width: 600px; }
 
+.contacto input {
+  width: 500px; }
+
+.contacto .mensaje {
+  width: 500px;
+  height: 200px; }
+
 .tel {
   grid-area: tel; }
 
@@ -141,6 +181,26 @@ footer {
 
 /*mobile*/
 @media only screen and (max-width: 600px) {
+  .logo {
+    height: 70px; }
+  .navLabel {
+    display: block;
+    cursor: pointer; }
+  .navMenu {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    background: #f5ecc2;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    clip-path: circle(0 at center);
+    transition: clip-path 1s ease-in-out; }
+  .navInput:checked + .navMenu {
+    clip-path: circle(100% at center); }
   .video {
     display: none; }
   .intro {
@@ -148,7 +208,7 @@ footer {
   .intro2 {
     display: block;
     text-align: center;
-    margin-top: 30px; }
+    margin-top: 130px; }
   .cabañas {
     display: flex;
     flex-direction: column; }
@@ -159,21 +219,10 @@ footer {
     text-align: center; }
   .mainGaleria .galeria img {
     width: 400px; }
-  .formulario {
-    background-color: whitesmoke;
-    font-size: 18px;
-    display: flex;
-    height: 200px;
-    width: 300px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-  .mainFormulario .formulario div {
-    font-size: 18px; }
   .mainContacto {
     display: grid;
     grid-template-columns: repeat(4, 80px);
-    margin-top: 30px;
+    margin-top: 130px;
     column-gap: 0px;
     row-gap: 30px;
     grid-template-areas: "mapa mapa mapa mapa"  "form form form form" "tel mail face insta"; }
@@ -188,6 +237,11 @@ footer {
     width: 300px; }
   .mainContacto div img {
     width: 60%; }
+  .contacto input {
+    width: 300px; }
+  .contacto .mensaje {
+    width: 300px;
+    height: 150px; }
   .tel {
     grid-area: tel; }
   .mail {
@@ -199,17 +253,37 @@ footer {
 
 /*Tablet*/
 @media only screen and (max-width: 900px) and (min-width: 600px) {
+  .logo {
+    height: 70px; }
+  .navLabel {
+    display: block;
+    cursor: pointer; }
+  .navMenu {
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    background: #f5ecc2;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    clip-path: circle(0 at center);
+    transition: clip-path 1s ease-in-out; }
+  .navInput:checked + .navMenu {
+    clip-path: circle(100% at center); }
   .video {
     display: none; }
   .video2 {
     display: block;
-    margin-top: 30px; }
+    margin-top: 130px; }
   .intro {
     display: none; }
   .intro2 {
     display: block;
     text-align: center;
-    margin-top: 30px; }
+    margin-top: 130px; }
   .cabañas {
     display: flex;
     flex-direction: column; }
@@ -219,7 +293,7 @@ footer {
   .mainContacto {
     display: grid;
     grid-template-columns: repeat(4, 80px);
-    margin-top: 30px;
+    margin-top: 130px;
     column-gap: 50px;
     row-gap: 30px;
     grid-template-areas: "mapa mapa mapa mapa"  "form form form form" "tel mail face insta"; }
@@ -230,6 +304,11 @@ footer {
     grid-area: form;
     font-size: 20px;
     width: 600px; }
+  .contacto input {
+    width: 600px; }
+  .contacto .mensaje {
+    width: 600px;
+    height: 150px; }
   .tel {
     grid-area: tel; }
   .mail {
