@@ -1,3 +1,12 @@
+//reset
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@import "layout/menu";
+@import "layout/colorBoostrap";
 
 //Variables
 $margenSuperior: 130px;
@@ -9,19 +18,11 @@ $margenSuperior: 130px;
     grid-template-rows: 375px 375px 375px;
     row-gap: 25px; 
 }
+
 %flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-}
-@import "layout/menu";
-
-
-//reset
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 //Estilos generales
@@ -138,6 +139,18 @@ grid-area: texto3;
 }
 
 .fondoReserva{
+    margin-top: $margenSuperior;
+    text-align: center;
+}
+
+.fondoT{
+    display: none;
+    margin-top: $margenSuperior;
+    text-align: center;
+}
+
+.fondoM{
+    display: none;
     margin-top: $margenSuperior;
     text-align: center;
 }
@@ -273,6 +286,16 @@ grid-area: texto3;
 
     .mainGaleria .galeria img{
         width: 400px;
+    }
+
+    // reservas
+
+    .fondoReserva{
+        display: none;
+    }
+
+    .fondoM{
+        display: block;
     }
 
     // contacto
@@ -418,6 +441,15 @@ grid-area: texto3;
         }    
     }
 
+    // reservas
+
+    .fondoReserva{
+        display: none;
+    }
+    .fondoT{
+        display: block;
+    }
+ 
     // contacto
 
     .mainContacto{
