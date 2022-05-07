@@ -138,23 +138,6 @@ grid-area: texto3;
     margin-top: $margenSuperior;
 }
 
-.fondoReserva{
-    margin-top: $margenSuperior;
-    text-align: center;
-}
-
-.fondoT{
-    display: none;
-    margin-top: $margenSuperior;
-    text-align: center;
-}
-
-.fondoM{
-    display: none;
-    margin-top: $margenSuperior;
-    text-align: center;
-}
-
 //contacto
 
 .mainContacto{
@@ -288,16 +271,6 @@ grid-area: texto3;
         width: 400px;
     }
 
-    // reservas
-
-    .fondoReserva{
-        display: none;
-    }
-
-    .fondoM{
-        display: block;
-    }
-
     // contacto
 
     .mainContacto{
@@ -371,7 +344,7 @@ grid-area: texto3;
 
 /*Tablet*/
 
-@media only screen and (max-width:900px) and (min-width:600px ){
+@media only screen and (max-width:950px) and (min-width:600px ){
 
     // Menu
     .logo{
@@ -402,7 +375,6 @@ grid-area: texto3;
         clip-path: circle(100% at center);
     }
     
-
     // index 
     
     .video{
@@ -423,7 +395,6 @@ grid-area: texto3;
         margin-top: $margenSuperior;
     }
 
-
     // cabañas 
 
     .cabañas{
@@ -441,21 +412,11 @@ grid-area: texto3;
         }    
     }
 
-    // reservas
-
-    .fondoReserva{
-        display: none;
-    }
-    .fondoT{
-        display: block;
-    }
- 
     // contacto
 
     .mainContacto{
         
-        display: grid;
-        
+        display: grid;      
         grid-template-columns: repeat(4, 80px);
         margin-top: $margenSuperior;
         column-gap: 50px;
@@ -465,8 +426,7 @@ grid-area: texto3;
                              "form form form form"
                              "tel mail face insta" ;
     }
-    
-   
+       
     .mapaC{
         display: block;
         grid-area: mapa;
@@ -508,5 +468,4 @@ grid-area: texto3;
         grid-area: insta;
             
     }
-
 }

@@ -6987,20 +6987,6 @@ footer {
 .formulario {
   margin-top: 130px; }
 
-.fondoReserva {
-  margin-top: 130px;
-  text-align: center; }
-
-.fondoT {
-  display: none;
-  margin-top: 130px;
-  text-align: center; }
-
-.fondoM {
-  display: none;
-  margin-top: 130px;
-  text-align: center; }
-
 .mainContacto {
   display: grid;
   grid-template-columns: 300px 300px 300px 300px;
@@ -7081,10 +7067,6 @@ footer {
     text-align: center; }
   .mainGaleria .galeria img {
     width: 400px; }
-  .fondoReserva {
-    display: none; }
-  .fondoM {
-    display: block; }
   .mainContacto {
     display: grid;
     grid-template-columns: repeat(4, 80px);
@@ -7118,7 +7100,7 @@ footer {
     grid-area: insta; } }
 
 /*Tablet*/
-@media only screen and (max-width: 900px) and (min-width: 600px) {
+@media only screen and (max-width: 950px) and (min-width: 600px) {
   .logo {
     height: 70px; }
   .navLabel {
@@ -7156,10 +7138,6 @@ footer {
   .cabañas div p {
     width: 400px;
     text-align: center; }
-  .fondoReserva {
-    display: none; }
-  .fondoT {
-    display: block; }
   .mainContacto {
     display: grid;
     grid-template-columns: repeat(4, 80px);
